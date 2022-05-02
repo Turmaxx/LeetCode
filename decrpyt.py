@@ -38,5 +38,3 @@ def decryptPassword(s):
     return new_string
 
 print(decryptPassword("43Ah*ck0rr0nk"))
-
-
