@@ -1,5 +1,5 @@
 # Just LeetCode Solutions
-<details open>
+<details>
   <summary>Stats </summary>
   
 ![Leetcode Stats](https://leetcode.card.workers.dev/?username=HiddenGrizzly&theme=dark)
