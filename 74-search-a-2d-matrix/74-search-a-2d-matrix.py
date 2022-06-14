@@ -5,8 +5,9 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        for subarray in matrix:
-            if target in subarray:
-                return True
-        return False
+        # for subarray in matrix:
+        #     if target in subarray:
+        #         return True
+        # return False
+        return any(target in row for row in matrix)
     
