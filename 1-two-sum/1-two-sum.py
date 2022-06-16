@@ -25,4 +25,5 @@ class Solution:
            difference = target - value
            if difference in prevMap:
                return [index, prevMap[difference]]
-           prevMap[value] = index 
+           prevMap[value] = index
+        return None
