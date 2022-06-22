@@ -17,7 +17,7 @@ class Solution(object):
         
         
         
-        # Time Complexity: O(log(n))
+        # Time Complexity: O(log(n)) Binary Search
         left, right = 0, len(nums) - 1
         
         while left < right:
