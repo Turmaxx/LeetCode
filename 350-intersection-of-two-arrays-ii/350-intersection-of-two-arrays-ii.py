@@ -23,7 +23,7 @@
         
         
 # hashMap solution        
-class Solution:
+class Solution():
     def intersect(self, nums1, nums2):
 		if len(nums1) > len(nums2):
 			return self.intersect(nums2, nums1)
