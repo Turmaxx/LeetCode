@@ -1,48 +1,42 @@
 # Time: O(N)
 # Space: O(1)
 
-class Solution:
-    def toId(self, c):
-        return ord(c) - ord('a')
-    
-    def generateFreq(self, seq, plen):
-        freq = [0] * 26
-        for i in range(plen):
-            freq[self.toId(seq[i])] += 1
-        return freq
-    
-    def freqMatches(self, first, second):
-        for i in range(26):
-            if first[i] != second[i]:
-                return False
-        return True
-            
+class Solution:            
     def findAnagrams(self, s: str, p: str):
-        # if p bigger than s then automatically disqualify
         res = []
         plen, slen = len(p), len(s)
         if plen > slen: return res
+
+
+        def toId(c):
+            return ord(c) - ord('a')
+
+        def genFreq(seq):
+            freq = [0] * 26
+            for i in range(plen):
+                freq[toId(seq[i])] += 1
+            return freq
+    
+        def freqMatch(first, second):
+            for i, j in zip(first, second):
+                if i != j: return False
+            return True
         
-        # freqencies of each letter in p
-        pfreq = self.generateFreq(p, plen)
         
-        # freqencies of each letter in s
-        sfreq = self.generateFreq(s, plen)
+        pfreq = genFreq(p)
+        sfreq = genFreq(s)
                         
-        if self.freqMatches(sfreq, pfreq):
+        if freqMatch(sfreq, pfreq):
             res.append(0)
             
         for i in range(1, slen - plen + 1):
-            # previous start of the window before sliding
             prevStart = i - 1
-            # new end of window slid to the right
             currEnd = i + plen - 1            
-            # update the new freqncies after sliding window
-            # previous start is not valid so remove it's count
-            sfreq[self.toId(s[prevStart])] -= 1
-            # new count for the end to be included in the frequencies
-            sfreq[self.toId(s[currEnd])] += 1
-            if self.freqMatches(sfreq, pfreq):
+    
+            sfreq[toId(s[prevStart])] -= 1
+            sfreq[toId(s[currEnd])] += 1
+
+            if freqMatch(sfreq, pfreq):
                 res.append(i)
                 
-        return res  
+        return res 
