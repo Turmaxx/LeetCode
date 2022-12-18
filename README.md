@@ -1,7 +1,7 @@
 # Just LeetCode Solutions
 
  
-![Leetcode Stats](https://leetcode.card.workers.dev/?username=HiddenGrizzly&theme=dark)
+![Leetcode Stats](https://leetcode.card.workers.dev/?username=Turmaxx&theme=dark)
 <!-- &extension=activity can be added to show lastest activity -->
 
 <!-- <a href="https://github.com/KnlnKS/leetcode-stats">
